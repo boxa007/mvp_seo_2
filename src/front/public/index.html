@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Control Panel</title>
+  </head>
+  <body>
+    <div class="control-panel">
+        <!-- <div class="statistics">
+            <p>Visited: <span id="visited-count">0</span></p>
+            <p>Not Visited: <span id="not-visited-count">0</span></p>
+            <p>Error: <span id="errors-count">0</span></p>
+        </div> -->
+        <div class="options">
+            <label><input type="checkbox" id="headless-checkbox">Headless</label>
+            <label><input type="checkbox" id="loop-checkbox">Loop</label>
+        </div>
+        <div class="configuration">
+            <label for="sheet-url">Sheet URL:</label>
+            <input type="text" id="sheet-url" placeholder="Enter sheet URL">
+
+            <label for="db-uri">DB URI:</label>
+            <input type="text" id="db-uri" placeholder="Enter DB URI">
+
+            <label for="proxy-list">Proxy sheet URL:</label>
+            <input type="text" id="proxy-list" placeholder="Enter proxy sheet URL">
+            
+            <label for="octo-api">Octo API:</label>
+            <input type="text" id="octo-api" placeholder="Enter Octo API">
+            
+            <label for="capmonster-api">Capmonster</label>
+            <input type="text", id="capmonster-api", placeholder="Enter Capmonster API">
+            
+            <label for="thread-count">Thread Count:</label>
+            <input type="number" id="thread-count" min="1" placeholder="Enter thread count">
+        </div>
+        <div class="buttons">
+            <button id="start-btn">Start<i class="fas fa-play"></i></button>
+            <button id="stop-btn" disabled="true">Stop<i class="fas fa-stop"></i></button>
+            <button id="import-data-btn">Import data<i class="fas"></i></button>
+        </div>
+    </div>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../renderer.js"></script>
+  </body>
+</html>

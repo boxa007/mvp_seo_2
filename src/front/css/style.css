@@ -1,0 +1,91 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.control-panel {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #3c8dbc; /* Loom blue color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:enabled {
+    background-color: green;
+    color: white;
+}
+
+.buttons button:disabled {
+    background-color: red;
+    color: white;
+}
+
+.buttons button:hover {
+    background-color: #367fa9; /* Darker shade of Loom blue on hover */
+}
+
+#import-data-btn {
+    background-color: #367fa9;
+}
+
+.options {
+    margin-bottom: 20px;
+}
+
+.options label {
+    margin-right: 10px;
+    color: #555;
+}
+
+.configuration label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.configuration input[type="text"],
+.configuration input[type="number"] {
+    width: calc(100% - 10px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+/* .statistics {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.statistics h3 {
+    margin-top: 0;
+    color: #333;
+} */
