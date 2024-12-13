@@ -45,9 +45,9 @@ export const createProfile = async (profileName, proxy) => {
             os: "win"
           },
           proxy: proxy,
-          // extensions: [
-          //   "pabjfbciaedomjjfelfafejkppknjleh@1.11.12"
-          // ],
+          extensions: [
+            "pabjfbciaedomjjfelfafejkppknjleh@1.11.12"
+          ],
         }
       ),
       maxAttempts: 5,

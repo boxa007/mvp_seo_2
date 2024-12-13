@@ -90,6 +90,7 @@ export class DomainRepository {
             domain.proxyBrowserErrorCount,
             new Date(),
             GOOGLE_SHEET_ID,
+            domain.browserType,
         )
         const foundDomain = await this.getDomain(domainModel);
         if (!foundDomain) {

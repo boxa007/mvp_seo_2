@@ -9,6 +9,7 @@ export class Domain {
     proxyBrowserErrorCount, 
     date,
     googleSheetId,
+    browserType,
   ) {
     this.id = id;
     this.keyword = keyword;
@@ -19,5 +20,6 @@ export class Domain {
     this.proxyBrowserErrorCount = proxyBrowserErrorCount;
     this.date = date;
     this.googleSheetId = googleSheetId;
+    this.browserType = browserType;
   }
 }

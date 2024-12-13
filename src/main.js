@@ -39,7 +39,7 @@ export const cleanup = async (profileId) => {
 };
 
 /**
- * @param {{id: number, keyword: string, site: string}[]} keywords 
+ * @param {{id: number, keyword: string, site: string, browserType: string}[]} keywords 
  * @param {{type: string, host: string, port: number, login: string, password: string}[]} proxies
  */
 async function processKeyword(keywords, proxies) {
@@ -96,18 +96,25 @@ async function processKeyword(keywords, proxies) {
         if (!searchResult) {
           continue;
         }
-    
+        
         [url, rank] = searchResult;
         await humanizedScrollToElement(page, `a[href="${url}"]`);
         await sleep(randomInt(5 * 1000, 8 * 1000)); // between 2 and 4 seconds;
-        
         const clickableElement = await page.$(`a[href="${url}"]`);
         await clickableElement.evaluate((b) => b.click());
-        await sleep(randomInt(2 * 1000, 4 * 1000)); // between 2 and 4 seconds;
-        [, page] = await browser.pages();
-        await sleep(randomInt(8 * 1000, 12 * 1000)); // between 2 and 4 seconds;
-        await scrollToBottom(page, randomInt(15 * 1000, 30 * 1000)); // between 30 and 60 seconds
-        await sleep(randomInt(5 * 1000, 8 * 1000)); // between 2 and 4 seconds;
+
+        if (keyword.browserType === 'google') {
+          await page.waitForNavigation({ waitUntil: 'load' });
+          await scrollToBottom(page, randomInt(15 * 1000, 30 * 1000)); // between 30 and 60 seconds
+          await sleep(randomInt(5 * 1000, 8 * 1000)); // between 2 and 4 seconds;
+        } else {
+          await sleep(randomInt(2 * 1000, 4 * 1000)); // between 2 and 4 seconds;
+          [, page] = await browser.pages();
+          await sleep(randomInt(8 * 1000, 12 * 1000)); // between 2 and 4 seconds;
+          await scrollToBottom(page, randomInt(15 * 1000, 30 * 1000)); // between 30 and 60 seconds
+          await sleep(randomInt(5 * 1000, 8 * 1000)); // between 2 and 4 seconds;
+        }
+        
       }
 
       try {

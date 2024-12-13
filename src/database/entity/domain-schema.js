@@ -37,6 +37,9 @@ export const DomainShema = new EntitySchema({
     },
     date: {
       type: 'datetime',
+    },
+    browserType: {
+      type: "varchar",
     }
   },
 });
